@@ -1,0 +1,19 @@
+const questions=[
+ {q:'Care variantă este corectă din punct de vedere gramatical?',a:['Fii atent la întrebare.','Fi atent la întrebare.','Fii-atent la întrebare.','Fii atentă la întrebare.'],correct:0,ex:'Forma corectă a imperativului afirmativ este „fii”.'},
+ {q:'Care este scopul principal al unei simulări de examen?',a:['Să înlocuiască învățarea','Să exerseze condițiile de examen','Să ofere doar întrebări ușoare','Să elimine timpul limitat'],correct:1,ex:'Simularea reproduce cât mai fidel condițiile examenului și ajută la gestionarea timpului.'},
+ {q:'Ce ar trebui să faci după o întrebare greșită?',a:['Să o ignori','Să închei testul','Să verifici explicația și să o repeți','Să ștergi rezultatul'],correct:2,ex:'Analizarea greșelilor este una dintre cele mai eficiente modalități de consolidare.'},
+ {q:'Ce indicator te ajută să vezi evoluția?',a:['Numărul de tab-uri deschise','Acuratețea răspunsurilor','Lungimea parolei','Culoarea paginii'],correct:1,ex:'Acuratețea și rezultatele pe capitole arată unde ai progresat și unde mai ai de lucru.'},
+ {q:'Care este prețul planului PRO prezentat pe platformă?',a:['5 lei/lună','10 lei/lună','15 lei/lună','30 lei/lună'],correct:2,ex:'Planul PRO este prezentat la 15 lei/lună.'}
+];
+let current=0,score=0,selected=null,timer=null,seconds=300;
+function selectExam(name){showToast('Ai ales: '+name+' — pregătim testele.');setTimeout(()=>document.querySelector('#dashboard').scrollIntoView({behavior:'smooth'}),350)}
+function startTest(){current=0;score=0;seconds=300;document.getElementById('testModal').classList.remove('hidden');renderQuestion();clearInterval(timer);timer=setInterval(()=>{seconds--;updateTimer();if(seconds<=0)finishTest()},1000)}
+function renderQuestion(){selected=null;const x=questions[current];document.getElementById('questionCount').textContent=`Întrebarea ${current+1} din ${questions.length}`;document.getElementById('testProgress').style.width=`${((current+1)/questions.length)*100}%`;document.getElementById('questionArea').innerHTML=`<div class="question"><span class="section-kicker">Test demo</span><h2>${x.q}</h2><div class="answers">${x.a.map((v,i)=>`<button class="answer" onclick="chooseAnswer(${i},this)">${String.fromCharCode(65+i)}. ${v}</button>`).join('')}</div></div>`;document.getElementById('nextBtn').textContent=current===questions.length-1?'Vezi rezultatul →':'Următoarea →'}
+function chooseAnswer(i,el){selected=i;document.querySelectorAll('.answer').forEach(b=>b.classList.remove('selected'));el.classList.add('selected')}
+function nextQuestion(){if(selected===null){showToast('Alege un răspuns pentru a continua.');return}if(selected===questions[current].correct)score++;if(current<questions.length-1){current++;renderQuestion()}else finishTest()}
+function finishTest(){clearInterval(timer);const pct=Math.round(score/questions.length*100);document.getElementById('testModal').classList.add('hidden');showToast(`Rezultat demo: ${score}/${questions.length} (${pct}%).`);setTimeout(()=>{document.getElementById('questionArea');alert(`Rezultat demo\n\n${score} din ${questions.length} răspunsuri corecte\nScor: ${pct}%\n\nÎn versiunea completă vei primi analiza pe materii, explicații și recomandări.`)},250)}
+function updateTimer(){const m=String(Math.floor(seconds/60)).padStart(2,'0'),s=String(seconds%60).padStart(2,'0');document.getElementById('timer').textContent=`${m}:${s}`}
+function openAuth(){document.getElementById('authModal').classList.remove('hidden')}
+function fakeLogin(){closeModal('authModal');showToast('Contul va fi conectat în etapa de autentificare.')}
+function closeModal(id){document.getElementById(id).classList.add('hidden');if(id==='testModal')clearInterval(timer)}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
