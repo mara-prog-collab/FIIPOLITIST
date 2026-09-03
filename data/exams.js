@@ -4,46 +4,54 @@ const EXAMS = {
     shortName: 'Câmpina / Cluj-Napoca',
     description: 'Pregătire organizată pe materii și capitole, cu teste grilă și simulări.',
     subjects: [
-      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie și punctuație'] },
-      { id: 'legislatie', name: 'Legislație', icon: 'LG', chapters: ['Noțiuni introductive', 'Instituții și autorități', 'Norme și proceduri'] },
-      { id: 'istorie', name: 'Istorie', icon: 'IS', chapters: ['România modernă', 'România contemporană', 'Constituirea statului român'] }
+      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie și punctuație', 'Sintaxă'] },
+      { id: 'engleza', name: 'Limba engleză', icon: 'EN', chapters: ['Grammar', 'Vocabulary', 'Reading'] },
+      { id: 'legislatie', name: 'Legislație MAI', icon: 'LG', chapters: ['Poliția Română', 'Statutul polițistului', 'Instituții și norme'] },
+      { id: 'educatie-civica', name: 'Educație civică', icon: 'CV', chapters: ['Cetățenie', 'Drepturi și obligații', 'Instituții'] },
+      { id: 'logica', name: 'Analiză și raționament', icon: 'LO', chapters: ['Logică', 'Analiză', 'Sinteză'] }
     ]
   },
   academia: {
     name: 'Academia de Poliție',
-    shortName: 'Admitere licență',
-    description: 'Pregătire pentru probele academice, structurată pe discipline.',
+    shortName: 'Facultatea de Poliție — licență',
+    description: 'Pregătire pentru proba de cunoștințe, structurată pe discipline și capitole.',
     subjects: [
-      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Sintaxă'] },
-      { id: 'istorie', name: 'Istorie', icon: 'IS', chapters: ['Istorie modernă', 'Istorie contemporană', 'Instituții'] },
-      { id: 'legislatie', name: 'Legislație', icon: 'LG', chapters: ['Noțiuni juridice', 'Instituții publice', 'Norme'] }
+      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Sintaxă', 'Ortografie și punctuație'] },
+      { id: 'istorie', name: 'Istorie', icon: 'IS', chapters: ['Romanitatea românilor', 'Evul Mediu', 'România modernă', 'România contemporană'] },
+      { id: 'engleza', name: 'Limba engleză', icon: 'EN', chapters: ['Grammar', 'Vocabulary', 'Reading'] }
     ]
   },
   frontiera: {
     name: 'Poliția de Frontieră',
     shortName: 'Pregătire admitere',
-    description: 'Teste de antrenament și simulări pentru pregătirea admiterii.',
+    description: 'Pregătire pentru admiterea în structurile Poliției de Frontieră, cu materii și teste dedicate.',
     subjects: [
-      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie'] },
-      { id: 'legislatie', name: 'Legislație', icon: 'LG', chapters: ['Legislație relevantă', 'Instituții', 'Proceduri'] }
+      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie și punctuație', 'Sintaxă'] },
+      { id: 'engleza', name: 'Limba engleză', icon: 'EN', chapters: ['Grammar', 'Vocabulary', 'Reading'] },
+      { id: 'legislatie', name: 'Legislație MAI', icon: 'LG', chapters: ['Poliția de Frontieră', 'Statutul polițistului', 'Instituții și norme'] },
+      { id: 'educatie-civica', name: 'Educație civică', icon: 'CV', chapters: ['Cetățenie', 'Drepturi și obligații', 'Instituții'] },
+      { id: 'logica', name: 'Analiză și raționament', icon: 'LO', chapters: ['Logică', 'Analiză', 'Sinteză'] }
     ]
   },
   pompieri: {
     name: 'Pompieri',
-    shortName: 'Școli de subofițeri',
-    description: 'Pregătire pentru probele teoretice, cu progres pe discipline.',
+    shortName: 'Facultatea de Pompieri / pregătire IGSU',
+    description: 'Pregătire pentru probele specifice, inclusiv matematică și fizică pentru Facultatea de Pompieri.',
     subjects: [
-      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie'] },
-      { id: 'legislatie', name: 'Legislație', icon: 'LG', chapters: ['Noțiuni de bază', 'Instituții', 'Reguli'] }
+      { id: 'matematica', name: 'Matematică', icon: 'MA', chapters: ['Algebră', 'Funcții', 'Analiză matematică', 'Ecuații și probleme'] },
+      { id: 'fizica', name: 'Fizică', icon: 'FI', chapters: ['Mecanică', 'Fizică moleculară și termodinamică', 'Electricitate'] }
     ]
   },
   jandarmerie: {
     name: 'Jandarmerie',
     shortName: 'Pregătire admitere',
-    description: 'Teste și simulări pentru consolidarea cunoștințelor.',
+    description: 'Teste și simulări pentru consolidarea cunoștințelor necesare admiterii.',
     subjects: [
-      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie'] },
-      { id: 'legislatie', name: 'Legislație', icon: 'LG', chapters: ['Noțiuni de bază', 'Instituții', 'Reguli'] }
+      { id: 'romana', name: 'Limba română', icon: 'RO', chapters: ['Gramatică', 'Vocabular', 'Ortografie și punctuație', 'Sintaxă'] },
+      { id: 'engleza', name: 'Limba engleză', icon: 'EN', chapters: ['Grammar', 'Vocabulary', 'Reading'] },
+      { id: 'legislatie', name: 'Legislație MAI', icon: 'LG', chapters: ['Jandarmeria Română', 'Statutul polițistului', 'Instituții și norme'] },
+      { id: 'educatie-civica', name: 'Educație civică', icon: 'CV', chapters: ['Cetățenie', 'Drepturi și obligații', 'Instituții'] },
+      { id: 'logica', name: 'Analiză și raționament', icon: 'LO', chapters: ['Logică', 'Analiză', 'Sinteză'] }
     ]
   }
 };
