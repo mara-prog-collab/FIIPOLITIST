@@ -1,5 +1,6 @@
-/* Fii Polițist.Ro — banca de întrebări modulară. Vocabularul este înlocuit cu banca revizuită. */
-const QUESTIONS = ROMANA_QUESTIONS.filter(q=>q.chapter!=='Vocabular').concat(VOCABULAR_QUESTIONS, ROMANA_EXTRA, [
+/* Fii Polițist.Ro — banca de întrebări modulară. */
+const ROMANA_BASE = ROMANA_QUESTIONS.filter(q=>q.chapter!=='Vocabular' && q.chapter!=='Morfologie');
+const QUESTIONS = ROMANA_BASE.concat(VOCABULAR_QUESTIONS, MORFOLOGIE_QUESTIONS, ROMANA_EXTRA, [
   { id:'is-001', subject:'istorie', chapter:'România modernă', q:'Ce urmărește, în principal, o cronologie istorică?', a:['Ordinea în timp a evenimentelor','Numărul de participanți','Lungimea unui document','Valoarea economică'], c:0, e:'Cronologia organizează evenimentele în ordinea desfășurării lor în timp.' },
   { id:'lg-001', subject:'legislatie', chapter:'Noțiuni introductive', q:'De ce este importantă verificarea sursei unei informații juridice?', a:['Pentru a evita informațiile depășite sau incorecte','Pentru a răspunde mai repede','Pentru a elimina explicațiile','Pentru a evita citirea textului'], c:0, e:'În pregătirea pentru examen trebuie folosite informații verificabile și actualizate.' },
   { id:'is-002', subject:'istorie', chapter:'România contemporană', q:'Ce reprezintă o sursă istorică?', a:['O mărturie sau un document despre trecut','Doar o opinie personală actuală','O regulă gramaticală','Un calcul matematic'], c:0, e:'Sursele istorice sunt mărturii, documente, obiecte sau alte dovezi care ajută la studierea trecutului.' },
