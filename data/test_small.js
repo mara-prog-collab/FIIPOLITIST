@@ -1,0 +1,1 @@
+const TEST_SMALL = [{id:'x1',q:'test',a:['a','b','c','d'],c:0,e:'ok'}];
