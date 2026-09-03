@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fii Polițist.Ro — teste grilă și simulări pentru admiterea în Poliție, Frontieră, Jandarmerie și Pompieri." />
+  <title>Fii Polițist.Ro — Pregătește-te. Exersează. Reușește.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Fii Polițist.Ro">
+        <span class="brand-mark">FP</span>
+        <span>Fii Polițist<span class="brand-dot">.Ro</span></span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#examene">Examene</a><a href="#dashboard">Dashboard</a><a href="#cum-functioneaza">Cum funcționează</a><a href="#pret">Preț</a>
+      </nav>
+      <button class="btn btn-outline small" onclick="openAuth()">Intră în cont</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Platformă de pregătire pentru admitere</div>
+          <h1>Pregătește-te.<br><span>Exersează.</span><br>Reușește.</h1>
+          <p class="hero-copy">Teste grilă, simulări și progresul tău într-un singur loc. Construiește-ți rutina și intră la examen cu mai multă încredere.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#examene">Alege examenul <span>→</span></a><a class="btn btn-ghost" href="#cum-functioneaza">Vezi cum funcționează</a></div>
+          <div class="trust-row"><span>✓ Fără fotografii inutile</span><span>✓ Explicații la răspunsuri</span><span>✓ Progres salvat</span></div>
+        </div>
+        <div class="hero-card-wrap">
+          <div class="hero-card">
+            <div class="mini-top"><span>PROGRES SĂPTĂMÂNAL</span><strong>+18%</strong></div>
+            <div class="progress-big"><strong>72%</strong><span>obiectiv atins</span></div>
+            <div class="bars"><i style="height:45%"></i><i style="height:65%"></i><i style="height:52%"></i><i style="height:82%"></i><i style="height:72%"></i><i style="height:94%"></i><i style="height:78%"></i></div>
+            <div class="card-divider"></div>
+            <div class="stat-line"><span>Întrebări rezolvate</span><b>248</b></div><div class="stat-line"><span>Răspunsuri corecte</span><b>84%</b></div><div class="stat-line"><span>Teste finalizate</span><b>12</b></div>
+          </div>
+          <div class="floating-score"><span>Ultimul test</span><b>8,70</b><small>+0,6 față de anterior</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examene" class="section section-soft">
+      <div class="container">
+        <div class="section-head"><div><span class="section-kicker">Alege traseul tău</span><h2>Pregătire pentru examenul tău</h2></div><p>Începe cu examenul pentru care te pregătești și continuă de unde ai rămas.</p></div>
+        <div class="exam-grid">
+          <button class="exam-card featured" onclick="selectExam('Școala de Agenți de Poliție')"><span class="exam-icon">P</span><span class="tag">POPULAR</span><h3>Școala de Agenți</h3><p>Câmpina · Cluj-Napoca</p><div class="card-bottom"><span>Teste + simulări</span><b>→</b></div></button>
+          <button class="exam-card" onclick="selectExam('Academia de Poliție')"><span class="exam-icon">A</span><h3>Academia de Poliție</h3><p>Admitere licență</p><div class="card-bottom"><span>Teste + simulări</span><b>→</b></div></button>
+          <button class="exam-card" onclick="selectExam('Poliția de Frontieră')"><span class="exam-icon">F</span><h3>Poliția de Frontieră</h3><p>Pregătire admitere</p><div class="card-bottom"><span>Teste + simulări</span><b>→</b></div></button>
+          <button class="exam-card" onclick="selectExam('Pompieri')"><span class="exam-icon">S</span><h3>Pompieri</h3><p>Școli de subofițeri</p><div class="card-bottom"><span>Teste + simulări</span><b>→</b></div></button>
+          <button class="exam-card" onclick="selectExam('Jandarmerie')"><span class="exam-icon">J</span><h3>Jandarmerie</h3><p>Pregătire admitere</p><div class="card-bottom"><span>Teste + simulări</span><b>→</b></div></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cum-functioneaza" class="section">
+      <div class="container">
+        <div class="section-head centered"><div><span class="section-kicker">Simplu și clar</span><h2>Tot ce ai nevoie ca să te pregătești</h2></div></div>
+        <div class="features">
+          <article><span class="feature-number">01</span><h3>Rezolvă teste grilă</h3><p>Exersează pe capitole sau fă teste mixte pentru a-ți verifica nivelul.</p></article>
+          <article><span class="feature-number">02</span><h3>Înțelege greșelile</h3><p>Vezi explicația după fiecare răspuns și salvează întrebările dificile.</p></article>
+          <article><span class="feature-number">03</span><h3>Urmărește progresul</h3><p>Vezi scorul, acuratețea și zonele în care merită să mai lucrezi.</p></article>
+          <article><span class="feature-number">04</span><h3>Simulează examenul</h3><p>Intră într-o simulare cu timp limitat și află cum stai înainte de ziua examenului.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard-preview">
+      <div class="container dashboard-shell">
+        <div class="dash-copy"><span class="section-kicker">Dashboard personal</span><h2>Știi exact unde ești.</h2><p>Un singur loc pentru activitatea ta, rezultatele recente și recomandarea pentru următoarea sesiune.</p><button class="btn btn-primary" onclick="startTest()">Încearcă un test demo →</button></div>
+        <div class="dash-panel"><div class="dash-panel-top"><strong>Progresul meu</strong><span>Ultimele 7 zile</span></div><div class="dash-score"><b>84%</b><span>răspunsuri corecte</span></div><div class="subject"><span>Limba română</span><div><i style="width:91%"></i></div><b>91%</b></div><div class="subject"><span>Istorie</span><div><i style="width:78%"></i></div><b>78%</b></div><div class="subject"><span>Legislație</span><div><i style="width:83%"></i></div><b>83%</b></div><div class="recommendation"><span>✦</span><div><b>Recomandarea zilei</b><p>Mai exersează capitolele unde ai sub 80%.</p></div></div></div>
+      </div>
+    </section>
+
+    <section id="pret" class="section pricing-section"><div class="container pricing-wrap"><div><span class="section-kicker">Fii gata pentru examen</span><h2>Totul la <span>15 lei/lună.</span></h2><p>Începe simplu. Renunți oricând. Fără contract pe termen lung.</p></div><div class="price-card"><div class="price"><b>15</b><span>lei / lună</span></div><ul><li>✓ Teste grilă și simulări</li><li>✓ Explicații la răspunsuri</li><li>✓ Progres și statistici</li><li>✓ Favorite și întrebări greșite</li></ul><button class="btn btn-primary full" onclick="openAuth()">Începe cu PRO →</button></div></div></section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><a class="brand" href="#home"><span class="brand-mark">FP</span><span>Fii Polițist<span class="brand-dot">.Ro</span></span></a><p>Pregătește-te. Exersează. Reușește.</p></div><div class="footer-links"><a href="#examene">Examene</a><a href="#cum-functioneaza">Cum funcționează</a><a href="#pret">Preț</a><a href="#">Termeni</a></div></div><div class="container copyright">© 2026 Fii Polițist.Ro · Platformă independentă de pregătire.</div></footer>
+
+  <div id="testModal" class="modal hidden"><div class="modal-card test-modal"><button class="close" onclick="closeModal('testModal')">×</button><div class="test-head"><span id="questionCount">Întrebarea 1 din 5</span><span id="timer">05:00</span></div><div class="test-progress"><i id="testProgress"></i></div><div id="questionArea"></div><div class="test-actions"><button class="btn btn-ghost" onclick="closeModal('testModal')">Renunță</button><button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Următoarea →</button></div></div></div>
+  <div id="authModal" class="modal hidden"><div class="modal-card auth-modal"><button class="close" onclick="closeModal('authModal')">×</button><span class="section-kicker">Fii Polițist.Ro</span><h2>Intră în cont</h2><p>Salvează progresul și continuă pregătirea de unde ai rămas.</p><input placeholder="Email" type="email"><input placeholder="Parolă" type="password"><button class="btn btn-primary full" onclick="fakeLogin()">Continuă →</button><small>Demo UI · autentificarea reală va fi conectată în etapa următoare.</small></div></div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
