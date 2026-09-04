@@ -1,7 +1,7 @@
 /* Fii Polițist.Ro — client Supabase.
-   URL-ul proiectului se completează separat; dacă nu sunt configurate, aplicația continuă să folosească localStorage. */
+   Dacă nu sunt configurate, aplicația continuă să folosească localStorage. */
 
-const SUPABASE_URL = '';
+const SUPABASE_URL = 'https://dduzavdfkxyutrdagsvp.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_aKM9MqejuiTbx2xoMp4j9w_fpjSACk5';
 
 let fpSupabase = null;
