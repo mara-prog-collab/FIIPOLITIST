@@ -46,11 +46,12 @@ async function fpSaveAttempt(attempt, answers=[]){
 async function fpSaveProgress(examKey, subjectId, answered, correct, testsCompleted=0){
   const client=getSupabase(), user=await fpUser();
   if(!client || !user) return false;
-  const result=await client.from('user_progress').upsert({
-    user_id:user.id,exam_key:examKey,subject_id:subjectId,
-    questions_answered:answered,correct_answers:correct,tests_completed:testsCompleted,
-    updated_at:new Date().toISOString()
-  },{onConflict:'user_id,exam_key,subject_id'});
+  const result=await client.rpc('increment_user_progress',{
+    p_exam_key:examKey,p_subject_id:subjectId,
+    p_answered:Math.max(0,Number(answered)||0),
+    p_correct:Math.max(0,Number(correct)||0),
+    p_tests:Math.max(0,Number(testsCompleted)||0)
+  });
   if(result.error) throw result.error;
   return true;
 }
@@ -59,6 +60,30 @@ async function fpLoadProgress(examKey){
   const client=getSupabase(), user=await fpUser();
   if(!client || !user) return null;
   const {data,error}=await client.from('user_progress').select('*').eq('user_id',user.id).eq('exam_key',examKey);
+  if(error) throw error;
+  return data || [];
+}
+
+async function fpLoadAttempts(limit=20){
+  const client=getSupabase(), user=await fpUser();
+  if(!client || !user) return null;
+  const {data,error}=await client.from('test_attempts').select('*').eq('user_id',user.id).order('completed_at',{ascending:false}).limit(limit);
+  if(error) throw error;
+  return data || [];
+}
+
+async function fpLoadFavorites(){
+  const client=getSupabase(), user=await fpUser();
+  if(!client || !user) return null;
+  const {data,error}=await client.from('favorites').select('question_id,created_at').eq('user_id',user.id).order('created_at',{ascending:false});
+  if(error) throw error;
+  return data || [];
+}
+
+async function fpLoadWrong(){
+  const client=getSupabase(), user=await fpUser();
+  if(!client || !user) return null;
+  const {data,error}=await client.from('wrong_questions').select('question_id,last_answered_at').eq('user_id',user.id).order('last_answered_at',{ascending:false});
   if(error) throw error;
   return data || [];
 }
